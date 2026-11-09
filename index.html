@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espoo Bike Fix | Bicycle repair and service in Kilo, Espoo</title>
+<meta name="description" content="Espoo Bike Fix: everyday bicycle repair, tune-ups and e-bike service in Kilo, Espoo. Open every day until 20:00. Vieraskuja 5, 02770 Espoo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#f97316;
+  --orange-dark:#c2410c;
+  --ink:#0a0a0a;
+  --slate:#0f172a;
+  --slate-2:#1e293b;
+  --paper:#ffffff;
+  --panel:#f5f4f2;
+  --line:#e4e2de;
+  --line-dark:#2b3648;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.mono{font-family:var(--mono)}
+.hazard{
+  height:8px;
+  background:repeating-linear-gradient(-45deg,var(--orange) 0 14px,var(--slate) 14px 28px);
+}
+/* ---------- top utility bar ---------- */
+.topbar{
+  background:var(--slate);
+  color:#e2e8f0;
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.02em;
+}
+.topbar-inner{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:8px 20px;max-width:1120px;margin:0 auto;flex-wrap:wrap;
+}
+.topbar a{color:#fff;text-decoration:none}
+.topbar a:hover{color:var(--orange)}
+.open-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  border:1px solid var(--line-dark);
+  padding:3px 10px;border-radius:4px;
+  white-space:nowrap;
+}
+.open-dot{width:8px;height:8px;border-radius:50%;background:#94a3b8;flex:none}
+.open-pill.is-open .open-dot{background:#22c55e}
+.open-pill.is-open{color:#bbf7d0;border-color:#166534}
+.open-pill.is-closed{color:#fecaca;border-color:#7f1d1d}
+.open-pill.is-closed .open-dot{background:#ef4444}
+/* ---------- header ---------- */
+.site-header{
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:50;
+}
+.site-header-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;max-width:1120px;margin:0 auto;
+}
+.wordmark{
+  display:flex;align-items:center;gap:10px;text-decoration:none;
+}
+.wordmark-badge{
+  width:34px;height:34px;background:var(--orange);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;flex:none;
+}
+.wordmark-badge svg{width:20px;height:20px;stroke:var(--slate)}
+.wordmark-text{font-weight:900;font-size:17px;letter-spacing:.04em;text-transform:uppercase}
+.wordmark-text span{color:var(--orange-dark)}
+.main-nav{display:flex;gap:2px;align-items:center}
+.main-nav a{
+  font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;padding:8px 12px;border-radius:4px;color:#44403c;
+}
+.main-nav a:hover{background:var(--panel);color:var(--ink)}
+.nav-call{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--slate);color:#fff !important;
+  padding:9px 14px !important;border-radius:6px;
+}
+.nav-call:hover{background:var(--slate-2) !important}
+.nav-call svg{width:13px;height:13px;stroke:var(--orange)}
+/* ---------- hero ---------- */
+.hero{background:var(--paper);border-bottom:1px solid var(--line)}
+.hero-grid{
+  display:grid;grid-template-columns:1.35fr .9fr;gap:48px;
+  padding:64px 20px 72px;max-width:1120px;margin:0 auto;align-items:center;
+}
+.kicker{
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange-dark);margin-bottom:16px;display:flex;align-items:center;gap:10px;
+}
+.kicker::before{content:"";width:28px;height:2px;background:var(--orange);display:inline-block}
+.hero h1{
+  font-size:clamp(38px,5.6vw,62px);font-weight:900;line-height:1.02;
+  letter-spacing:-.015em;text-transform:uppercase;margin-bottom:20px;
+}
+.hero h1 .mark{
+  background:var(--orange);padding:0 10px;display:inline-block;
+}
+.hero-sub{
+  font-size:17px;color:#44403c;max-width:52ch;margin-bottom:28px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-weight:700;font-size:15px;text-decoration:none;
+  padding:13px 22px;border-radius:6px;border:2px solid var(--slate);
+  cursor:pointer;transition:background .15s ease,color .15s ease;
+}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-solid{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.btn-solid:hover{background:var(--orange-dark);border-color:var(--orange-dark);color:#fff}
+.btn-outline{background:transparent;color:var(--ink)}
+.btn-outline:hover{background:var(--slate);color:#fff}
+/* hero ticket stub */
+.hero-ticket{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:6px;
+  overflow:hidden;
+}
+.hero-ticket-head{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 18px;border-bottom:1px dashed #c9c6c0;
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#57534e;
+}
+.hero-ticket-head strong{color:var(--ink)}
+.hero-ticket-body{padding:20px 18px}
+.hero-ticket-body .row{
+  display:flex;justify-content:space-between;gap:14px;
+  padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;
+}
+.hero-ticket-body .row:last-child{border-bottom:none}
+.hero-ticket-body .row .k{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#78716c;padding-top:2px}
+.hero-ticket-body .row .v{font-weight:600;text-align:right}
+.hero-ticket-body .row .v.accent{color:var(--orange-dark)}
+.hero-ticket-foot{
+  padding:12px 18px;background:var(--slate);color:#cbd5e1;
+  font-family:var(--mono);font-size:12px;letter-spacing:.05em;
+  display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+}
+.hero-ticket-foot b{color:var(--orange)}
+/* ---------- section scaffolding ---------- */
+.section{padding:72px 0}
+.section-alt{background:var(--panel)}
+.section-head{margin-bottom:40px;max-width:640px}
+.section-label{
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange-dark);margin-bottom:12px;display:flex;align-items:center;gap:10px;
+}
+.section-label::before{content:"";width:28px;height:2px;background:var(--orange);display:inline-block}
+.section-head h2{
+  font-size:clamp(26px,3.4vw,38px);font-weight:900;letter-spacing:-.01em;
+  text-transform:uppercase;line-height:1.08;
+}
+.section-head p{margin-top:14px;color:#44403c;font-size:16px}
+/* ---------- hours panel ---------- */
+.hours-panel{
+  background:var(--slate);color:#e2e8f0;border-radius:6px;overflow:hidden;
+}
+.hours-panel-inner{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+}
+.hours-brag{
+  padding:44px 40px;border-right:1px solid var(--line-dark);
+  display:flex;flex-direction:column;justify-content:center;gap:18px;
+}
+.hours-brag .big{
+  font-size:clamp(34px,4.6vw,52px);font-weight:900;line-height:1.04;
+  text-transform:uppercase;letter-spacing:-.01em;color:#fff;
+}
+.hours-brag .big em{font-style:normal;color:var(--orange)}
+.hours-brag p{color:#94a3b8;font-size:15px;max-width:40ch}
+.hours-status{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:13px;letter-spacing:.05em;
+  border:1px solid var(--line-dark);border-radius:4px;padding:7px 12px;width:fit-content;
+}
+.hours-status .open-dot{width:9px;height:9px}
+.hours-status.is-open{border-color:#166534;color:#bbf7d0}
+.hours-status.is-open .open-dot{background:#22c55e}
+.hours-status.is-closed{border-color:#7f1d1d;color:#fecaca}
+.hours-status.is-closed .open-dot{background:#ef4444}
+.hours-table{padding:32px 40px}
+.hours-table h3{
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:#94a3b8;margin-bottom:16px;font-weight:400;
+}
+.hours-table ul{list-style:none}
+.hours-table li{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding:9px 0;border-bottom:1px solid var(--line-dark);
+  font-family:var(--mono);font-size:14px;
+}
+.hours-table li:last-child{border-bottom:none}
+.hours-table li .day{color:#cbd5e1}
+.hours-table li .time{color:#fff;font-weight:600}
+.hours-table li.today .day,.hours-table li.today .time{color:var(--orange)}
+.hours-table li.today .day::after{content:" *";color:var(--orange)}
+.hours-note{margin-top:14px;font-size:12px;font-family:var(--mono);color:#64748b;letter-spacing:.03em}
+/* ---------- service tickets ---------- */
+.ticket-stack{display:flex;flex-direction:column;gap:14px}
+.ticket{
+  display:grid;grid-template-columns:150px 1fr 170px;
+  background:var(--paper);border:1px solid var(--line);border-radius:6px;
+  overflow:hidden;transition:border-color .15s ease,box-shadow .15s ease;
+}
+.ticket:hover{border-color:#b8b4ad;box-shadow:0 2px 0 0 var(--orange)}
+.ticket-stub{
+  background:var(--panel);border-right:2px dashed #d6d3ce;
+  padding:18px 16px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;
+}
+.ticket-no{
+  font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.06em;color:#57534e;
+}
+.tag{
+  display:inline-block;width:fit-content;
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.09em;
+  padding:4px 8px;border-radius:4px;text-transform:uppercase;
+}
+.tag-fill{background:var(--orange);color:var(--ink)}
+.tag-outline{border:1px solid #a8a29e;color:#57534e;background:var(--paper)}
+.tag-dark{background:var(--slate);color:#e2e8f0}
+.ticket-body{padding:18px 22px}
+.ticket-body h3{font-size:19px;font-weight:800;letter-spacing:-.005em;margin-bottom:6px}
+.ticket-body p{font-size:14.5px;color:#44403c;max-width:60ch}
+.ticket-price{
+  padding:18px 20px;border-left:1px solid var(--line);
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:2px;
+  text-align:right;
+}
+.ticket-price .from{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#78716c}
+.ticket-price .amount{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--ink)}
+.ticket-price .per{font-family:var(--mono);font-size:11px;color:#a8a29e}
+.ticket-stack-note{
+  margin-top:18px;font-family:var(--mono);font-size:12.5px;color:#78716c;letter-spacing:.03em;
+}
+/* ---------- worth fixing checklist ---------- */
+.worth-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
+.check-list{list-style:none;display:flex;flex-direction:column}
+.check-item{
+  display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);
+}
+.check-item:last-child{border-bottom:none}
+.check-icon{
+  width:30px;height:30px;flex:none;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.check-icon.yes{background:var(--orange)}
+.check-icon.no{background:var(--slate)}
+.check-icon svg{width:15px;height:15px}
+.check-icon.yes svg{stroke:var(--ink)}
+.check-icon.no svg{stroke:#e2e8f0}
+.check-item h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.check-item p{font-size:14px;color:#44403c}
+.worth-aside{
+  background:var(--slate);color:#e2e8f0;border-radius:6px;padding:32px 30px;
+  position:sticky;top:96px;
+}
+.worth-aside .hazard{margin:-32px -30px 24px;border-radius:6px 6px 0 0}
+.worth-aside h3{font-size:21px;font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:14px;letter-spacing:.01em}
+.worth-aside p{font-size:14.5px;color:#94a3b8;margin-bottom:18px}
+.worth-aside .mono-line{
+  font-family:var(--mono);font-size:13px;color:var(--orange);letter-spacing:.04em;
+  border-top:1px solid var(--line-dark);padding-top:16px;
+}
+/* ---------- photos ---------- */
+.photo-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+.photo-card{
+  border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper);
+}
+.photo-frame{height:230px;background:var(--slate-2);overflow:hidden}
+.photo-frame img{width:100%;height:100%;object-fit:cover}
+.photo-card figcaption{
+  font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:#57534e;
+  padding:10px 14px;border-top:1px solid var(--line);
+}
+/* ---------- visit ---------- */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.address-card{
+  border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper);
+}
+.address-card .hazard{height:6px}
+.address-body{padding:26px 28px}
+.address-body dl{display:flex;flex-direction:column;gap:18px}
+.address-body dt{
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:#78716c;margin-bottom:5px;
+}
+.address-body dd{font-size:16px;font-weight:600}
+.address-body dd.mono-line{font-family:var(--mono);font-size:15px;font-weight:500}
+.address-body dd a{color:var(--orange-dark);text-decoration:none;border-bottom:2px solid var(--orange)}
+.address-body dd a:hover{color:var(--ink);border-color:var(--ink)}
+.address-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.visit-copy p{font-size:16px;color:#44403c;margin-bottom:16px;max-width:52ch}
+.visit-copy p strong{color:var(--ink)}
+.mini-facts{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:0}
+.mini-facts li{
+  display:flex;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);
+  font-size:14px;
+}
+.mini-facts li:last-child{border-bottom:none}
+.mini-facts .n{font-family:var(--mono);font-size:12px;color:var(--orange-dark);flex:none}
+/* ---------- booking form ---------- */
+.book-section{background:var(--slate);color:#e2e8f0}
+.book-section .section-head h2{color:#fff}
+.book-section .section-head p{color:#94a3b8}
+.book-section .section-label{color:var(--orange)}
+.book-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.book-info ul{list-style:none;display:flex;flex-direction:column}
+.book-info li{
+  padding:14px 0;border-bottom:1px solid var(--line-dark);font-size:14.5px;color:#cbd5e1;
+  display:flex;gap:12px;
+}
+.book-info li:last-child{border-bottom:none}
+.book-info li .n{font-family:var(--mono);font-size:12px;color:var(--orange);flex:none;padding-top:1px}
+.book-form{
+  background:var(--paper);color:var(--ink);border-radius:6px;padding:30px;
+}
+.book-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field label{
+  display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:#57534e;margin-bottom:7px;
+}
+.field input,.field select,.field textarea{
+  width:100%;font-family:inherit;font-size:15px;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:6px;
+  padding:12px 14px;outline:none;transition:border-color .15s ease,box-shadow .15s ease;
+}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--orange);box-shadow:0 0 0 2px rgba(249,115,22,.25);
+}
+.form-submit{width:100%;justify-content:center;font-size:16px}
+.form-note{
+  margin-top:14px;font-family:var(--mono);font-size:12px;color:#78716c;letter-spacing:.03em;text-align:center;
+}
+.form-confirm{
+  display:none;background:var(--paper);color:var(--ink);border-radius:6px;padding:36px 30px;text-align:center;
+}
+.form-confirm.show{display:block}
+.form-confirm .stamp{
+  display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.1em;
+  border:2px solid var(--orange);color:var(--orange-dark);border-radius:4px;
+  padding:6px 14px;text-transform:uppercase;margin-bottom:18px;
+}
+.form-confirm h3{font-size:24px;font-weight:900;text-transform:uppercase;margin-bottom:10px}
+.form-confirm p{color:#44403c;font-size:15px;max-width:44ch;margin:0 auto 8px}
+.form-confirm .mono-line{font-family:var(--mono);font-size:13px;color:#57534e;margin-top:16px}
+/* ---------- footer ---------- */
+.site-footer{background:var(--ink);color:#a8a29e;padding:44px 0 110px}
+.footer-grid{
+  display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start;
+}
+.footer-brand{font-weight:900;font-size:16px;letter-spacing:.05em;text-transform:uppercase;color:#fff;margin-bottom:8px}
+.footer-brand span{color:var(--orange)}
+.footer-col{font-size:13.5px;line-height:1.8}
+.footer-col a{color:#e7e5e4;text-decoration:none}
+.footer-col a:hover{color:var(--orange)}
+.footer-col .mono{font-size:13px}
+.footer-demo{
+  margin-top:28px;padding-top:18px;border-top:1px solid #262626;
+  font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:#78716c;
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+/* ---------- sticky mobile call bar ---------- */
+.call-bar{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:var(--slate);border-top:2px solid var(--orange);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+}
+.call-bar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.call-bar-status{font-family:var(--mono);font-size:11.5px;color:#cbd5e1;letter-spacing:.04em;line-height:1.4}
+.call-bar-status b{color:var(--orange);font-weight:600}
+.call-bar-btn{
+  display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--ink);
+  font-weight:800;font-size:14px;text-decoration:none;padding:11px 18px;border-radius:6px;
+  white-space:nowrap;
+}
+.call-bar-btn svg{width:15px;height:15px}
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+/* ---------- responsive ---------- */
+@media (max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:36px;padding:48px 20px 56px}
+  .hours-panel-inner{grid-template-columns:1fr}
+  .hours-brag{border-right:none;border-bottom:1px solid var(--line-dark);padding:36px 28px}
+  .hours-table{padding:28px}
+  .worth-grid,.visit-grid,.book-grid{grid-template-columns:1fr;gap:36px}
+  .worth-aside{position:static}
+  .photo-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  .main-nav a:not(.nav-call){display:none}
+  .ticket{grid-template-columns:1fr}
+  .ticket-stub{
+    flex-direction:row;align-items:center;border-right:none;
+    border-bottom:2px dashed #d6d3ce;padding:12px 16px;
+  }
+  .ticket-price{
+    flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px;
+    border-left:none;border-top:1px solid var(--line);padding:12px 20px;text-align:left;
+  }
+  .book-form .form-row{grid-template-columns:1fr}
+  .photo-grid{grid-template-columns:1fr}
+  .call-bar{display:block}
+  .site-footer{padding-bottom:120px}
+  .section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>VIERASKUJA 5 &middot; 02770 ESPOO &middot; KILO</span>
+    <span class="open-pill" id="openPill"><span class="open-dot"></span><span id="openPillText">CHECKING HOURS</span></span>
+    <a href="tel:+358465272305">+358 46 5272305</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="#top" aria-label="Espoo Bike Fix, back to top">
+      <span class="wordmark-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6" cy="17" r="3.4"/><circle cx="18" cy="17" r="3.4"/>
+          <path d="M6 17 10 8h5l3 9M10 8 8.5 5.5H6M15 8l-1.6-2.5"/>
+        </svg>
+      </span>
+      <span class="wordmark-text">Espoo Bike <span>Fix</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#hours">Hours</a>
+      <a href="#worth">Worth fixing?</a>
+      <a href="#visit">Visit</a>
+      <a href="#book">Book</a>
+      <a class="nav-call" href="tel:+358465272305">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/>
+        </svg>
+        Call
+      </a>
+    </nav>
+  </div>
+</header>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="kicker">Bicycle repair &middot; Kilo, Espoo</p>
+      <h1>Your bike,<br>fixed in <span class="mark">Kilo.</span></h1>
+      <p class="hero-sub">
+        Everyday bike repairs for commuters and families. Drop the bike off before work,
+        pick it up after. We are open every day of the week, and we tell you straight
+        if a repair is not worth the money.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="tel:+358465272305">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/>
+          </svg>
+          Call +358 46 5272305
+        </a>
+        <a class="btn btn-outline" href="#book">Leave a repair request</a>
+      </div>
+    </div>
+
+    <aside class="hero-ticket reveal" aria-label="Workshop ticket">
+      <div class="hero-ticket-head">
+        <span>WORKSHOP TICKET</span>
+        <strong id="ticketNo">No. A-247</strong>
+      </div>
+      <div class="hero-ticket-body">
+        <div class="row"><span class="k">Shop</span><span class="v">Espoo Bike Fix</span></div>
+        <div class="row"><span class="k">Address</span><span class="v">Vieraskuja 5, 02770 Espoo</span></div>
+        <div class="row"><span class="k">Today</span><span class="v accent" id="heroToday">Open until 20:00</span></div>
+        <div class="row"><span class="k">Punctures</span><span class="v">While you wait</span></div>
+        <div class="row"><span class="k">E-bikes</span><span class="v">Diagnostics welcome</span></div>
+      </div>
+      <div class="hero-ticket-foot">
+        <span>DROP OFF BEFORE WORK</span>
+        <span><b>PICK UP AFTER</b></span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ HOURS ============ -->
+<section class="section" id="hours">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-label">Opening hours</p>
+      <h2>Open when other shops are closed</h2>
+    </div>
+    <div class="hours-panel reveal">
+      <div class="hours-panel-inner">
+        <div class="hours-brag">
+          <p class="big">Open every day until <em>20:00</em></p>
+          <p>
+            Most bike shops in Espoo close at 17:00 or 18:00, right when you finish work.
+            We stay open late seven days a week, so your bike never has to wait for the weekend.
+          </p>
+          <span class="hours-status" id="hoursStatus">
+            <span class="open-dot"></span><span id="hoursStatusText">Checking hours</span>
+          </span>
+        </div>
+        <div class="hours-table">
+          <h3>Full week &middot; Vieraskuja 5, Kilo</h3>
+          <ul id="hoursList">
+            <li data-day="1"><span class="day">Monday</span><span class="time">09:00-20:30</span></li>
+            <li data-day="2"><span class="day">Tuesday</span><span class="time">09:00-20:00</span></li>
+            <li data-day="3"><span class="day">Wednesday</span><span class="time">09:00-20:00</span></li>
+            <li data-day="4"><span class="day">Thursday</span><span class="time">09:00-20:00</span></li>
+            <li data-day="5"><span class="day">Friday</span><span class="time">09:00-20:00</span></li>
+            <li data-day="6"><span class="day">Saturday</span><span class="time">09:00-20:00</span></li>
+            <li data-day="0"><span class="day">Sunday</span><span class="time">09:00-20:00</span></li>
+          </ul>
+          <p class="hours-note">* TODAY &middot; IN SHORT: Mon 09:00-20:30, Tue-Sun 09:00-20:00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE TICKETS ============ -->
+<section class="section section-alt" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-label">Service menu</p>
+      <h2>Repairs, priced like tickets</h2>
+      <p>
+        Every job gets a ticket number and a price agreed before we start.
+        These are the everyday jobs we do most, with honest from-prices.
+        Parts are extra, and we always ask before fitting anything beyond the quote.
+      </p>
+    </div>
+
+    <div class="ticket-stack">
+      <article class="ticket reveal">
+        <div class="ticket-stub">
+          <span class="ticket-no">No. A-101</span>
+          <span class="tag tag-fill">While you wait</span>
+        </div>
+        <div class="ticket-body">
+          <h3>Flat tire and puncture repair</h3>
+          <p>
+            New quality tube fitted, tire and rim checked for whatever caused the flat.
+            The most common job in the shop, usually done in 15 minutes.
+          </p>
+        </div>
+        <div class="ticket-price">
+          <span class="from">From</span>
+          <span class="amount">&euro;20</span>
+          <span class="per">tube included</span>
+        </div>
+      </article>
+
+      <article class="ticket reveal">
+        <div class="ticket-stub">
+          <span class="ticket-no">No. A-102</span>
+          <span class="tag tag-fill">While you wait</span>
+        </div>
+        <div class="ticket-body">
+          <h3>Brake adjustment</h3>
+          <p>
+            Pads, cables and lever feel set up properly on both wheels.
+            Worn pads replaced on the spot if needed, from &euro;10 a pair.
+          </p>
+        </div>
+        <div class="ticket-price">
+          <span class="from">From</span>
+          <span class="amount">&euro;15</span>
+          <span class="per">both brakes</span>
+        </div>
+      </article>
+
+      <article class="ticket reveal">
+        <div class="ticket-stub">
+          <span class="ticket-no">No. A-103</span>
+          <span class="tag tag-outline">Same day</span>
+        </div>
+        <div class="ticket-body">
+          <h3>Gear tune</h3>
+          <p>
+            Indexing, limit screws and cable tension dialled in, shifting checked
+            on the stand under load. Fixes gears that skip, hesitate or drop the chain.
+          </p>
+        </div>
+        <div class="ticket-price">
+          <span class="from">From</span>
+          <span class="amount">&euro;25</span>
+          <span class="per">labour</span>
+        </div>
+      </article>
+
+      <article class="ticket reveal">
+        <div class="ticket-stub">
+          <span class="ticket-no">No. A-104</span>
+          <span class="tag tag-dark">1-3 days</span>
+        </div>
+        <div class="ticket-body">
+          <h3>Full overhaul</h3>
+          <p>
+            The bike is stripped, cleaned and regreased: hubs, headset and bottom bracket.
+            New cables and housing fitted where needed. The right reset for a daily commuter
+            or a bike coming out of storage.
+          </p>
+        </div>
+        <div class="ticket-price">
+          <span class="from">From</span>
+          <span class="amount">&euro;120</span>
+          <span class="per">labour</span>
+        </div>
+      </article>
+
+      <article class="ticket reveal">
+        <div class="ticket-stub">
+          <span class="ticket-no">No. A-105</span>
+          <span class="tag tag-outline">Same day</span>
+        </div>
+        <div class="ticket-body">
+          <h3>E-bike service</h3>
+          <p>
+            Diagnostics welcome for Bosch, Shimano Steps and Bafang systems,
+            plus a full mechanical check of brakes, drivetrain and wheels.
+            Bring the charger if the fault is electrical.
+          </p>
+        </div>
+        <div class="ticket-price">
+          <span class="from">From</span>
+          <span class="amount">&euro;45</span>
+          <span class="per">diagnostics + check</span>
+        </div>
+      </article>
+
+      <article class="ticket reveal">
+        <div class="ticket-stub">
+          <span class="ticket-no">No. A-106</span>
+          <span class="tag tag-fill">While you wait</span>
+        </div>
+        <div class="ticket-body">
+          <h3>Winter stud tire fitting</h3>
+          <p>
+            Studded tires fitted and pressures set for icy Espoo paths.
+            Bring your own tires, or buy a set from the shop while you wait.
+            October and November are busy, come early in the day.
+          </p>
+        </div>
+        <div class="ticket-price">
+          <span class="from">From</span>
+          <span class="amount">&euro;20</span>
+          <span class="per">per wheel</span>
+        </div>
+      </article>
+    </div>
+
+    <p class="ticket-stack-note">
+      PRICES INCLUDE VAT 25.5% &middot; SOMETHING ELSE BROKEN? CALL +358 46 5272305 AND DESCRIBE THE SYMPTOM.
+    </p>
+  </div>
+</section>
+
+<!-- ============ WORTH FIXING ============ -->
+<section class="section" id="worth">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-label">Honest check</p>
+      <h2>Is it worth fixing?</h2>
+      <p>
+        Not every bike deserves a repair bill. Run through this checklist,
+        or just roll the bike in and we will give you a straight answer for free.
+      </p>
+    </div>
+
+    <div class="worth-grid">
+      <ul class="check-list">
+        <li class="check-item reveal">
+          <span class="check-icon yes" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6"/></svg>
+          </span>
+          <div>
+            <h3>The frame is straight and rust-free</h3>
+            <p>A sound frame is the one part that matters most. Almost everything else on a bike can be replaced for a reasonable price.</p>
+          </div>
+        </li>
+        <li class="check-item reveal">
+          <span class="check-icon yes" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6"/></svg>
+          </span>
+          <div>
+            <h3>The repair costs less than half of a comparable new bike</h3>
+            <p>A &euro;60 brake and gear job on a decent hybrid is money well spent. The same bill on a worn-out supermarket bike usually is not.</p>
+          </div>
+        </li>
+        <li class="check-item reveal">
+          <span class="check-icon yes" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6"/></svg>
+          </span>
+          <div>
+            <h3>You actually like riding it</h3>
+            <p>A bike that fits you and feels right is worth keeping alive. Fit and comfort are expensive to buy new, cheap to maintain.</p>
+          </div>
+        </li>
+        <li class="check-item reveal">
+          <span class="check-icon no" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </span>
+          <div>
+            <h3>The frame is cracked, bent or deeply rusted</h3>
+            <p>Frame damage is a safety issue, not a repair ticket. We will not weld or bodge a cracked frame, and neither should anyone else.</p>
+          </div>
+        </li>
+        <li class="check-item reveal">
+          <span class="check-icon no" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </span>
+          <div>
+            <h3>Everything is worn at once</h3>
+            <p>Chain, cassette, chainrings, cables, tires and brake pads together can pass &euro;200 in parts. At that point we will tell you honestly if the bike is done.</p>
+          </div>
+        </li>
+      </ul>
+
+      <aside class="worth-aside reveal">
+        <div class="hazard" aria-hidden="true"></div>
+        <h3>Free look, straight answer</h3>
+        <p>
+          Roll the bike in during opening hours and we will look at it on the spot.
+          If the repair makes sense, you get a fixed quote and a ticket number.
+          If it does not, we say so and charge you nothing for the look.
+        </p>
+        <p>
+          No appointment needed for a check. Just come by Vieraskuja 5 in Kilo,
+          any day of the week, before 20:00.
+        </p>
+        <p class="mono-line">ESTIMATES: ALWAYS FREE &middot; ALWAYS HONEST</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHOTOS ============ -->
+<section class="section section-alt" aria-label="Workshop photos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-label">The shop</p>
+      <h2>A small workshop, not a showroom</h2>
+      <p>
+        We are a working repair shop in Kilo. Stands, tools, spare tubes and studded tires.
+        Your bike is worked on by the same person you talk to at the counter.
+      </p>
+    </div>
+    <div class="photo-grid">
+      <figure class="photo-card reveal">
+        <div class="photo-frame">
+          <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=1200&q=80"
+               alt="Bicycle held in a repair stand while a mechanic works on the drivetrain"
+               loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <figcaption>FIG.01 &middot; ON THE STAND</figcaption>
+      </figure>
+      <figure class="photo-card reveal">
+        <div class="photo-frame">
+          <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1200&q=80"
+               alt="A bicycle leaning against a wall, ready for daily commuting"
+               loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <figcaption>FIG.02 &middot; DAILY COMMUTER</figcaption>
+      </figure>
+      <figure class="photo-card reveal">
+        <div class="photo-frame">
+          <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=1200&q=80"
+               alt="Close view of a bicycle wheel and spokes"
+               loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <figcaption>FIG.03 &middot; WHEELS AND SPOKES</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section class="section" id="visit">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-label">Find us</p>
+      <h2>Vieraskuja 5, Kilo</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="address-card reveal">
+        <div class="hazard" aria-hidden="true"></div>
+        <div class="address-body">
+          <dl>
+            <div>
+              <dt>Address</dt>
+              <dd class="mono-line">Vieraskuja 5<br>02770 Espoo, Finland</dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd class="mono-line"><a href="tel:+358465272305">+358 46 5272305</a></dd>
+            </div>
+            <div>
+              <dt>Hours</dt>
+              <dd class="mono-line">Mon 09:00-20:30<br>Tue-Sun 09:00-20:00</dd>
+            </div>
+          </dl>
+          <div class="address-actions">
+            <a class="btn btn-solid" href="https://www.google.com/maps/place/Espoo+Bike+Fix/@60.2078778,24.6627941" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Get directions
+            </a>
+            <a class="btn btn-outline" href="tel:+358465272305">Call the shop</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="visit-copy">
+        <p>
+          The shop is in <strong>Kilo</strong>, on Vieraskuja, a short ride from
+          Lepp&auml;vaara station and easy to reach from Kera, Viherlaakso and
+          the Kilonpuisto side of the tracks.
+        </p>
+        <p>
+          Most of our customers are <strong>commuters and families</strong> from
+          the neighbourhood. The routine is simple: drop the bike off on your way
+          to the train in the morning, pick it up fixed on your way home.
+          We are open until 20:00 every day, so there is no rush.
+        </p>
+        <ul class="mini-facts">
+          <li><span class="n">01</span> No appointment needed for small jobs, just walk in.</li>
+          <li><span class="n">02</span> Punctures, brakes and stud tires are done while you wait.</li>
+          <li><span class="n">03</span> E-bike diagnostics for Bosch, Shimano Steps and Bafang.</li>
+          <li><span class="n">04</span> Fixed quote before any work starts, no surprises at pickup.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="section book-section" id="book">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-label">Repair request</p>
+      <h2>Book a repair ticket</h2>
+      <p>
+        Tell us what is wrong with the bike and we will call or text you back
+        with a time and a price. For punctures and brake adjustments you can
+        also just walk in.
+      </p>
+    </div>
+
+    <div class="book-grid">
+      <div class="book-info">
+        <ul>
+          <li><span class="n">01</span> Send the request, it takes a minute. Include the bike brand if you know it.</li>
+          <li><span class="n">02</span> We reply during opening hours with a ticket number, a time and a fixed quote.</li>
+          <li><span class="n">03</span> Drop the bike at Vieraskuja 5. Pick it up the same day in most cases.</li>
+          <li><span class="n">04</span> In a hurry? Call <a href="tel:+358465272305" style="color:var(--orange)">+358 46 5272305</a> and describe the symptom.</li>
+        </ul>
+      </div>
+
+      <div>
+        <form class="book-form" id="bookForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="fName">Your name</label>
+              <input type="text" id="fName" name="name" autocomplete="name" required placeholder="First and last name">
+            </div>
+            <div class="field">
+              <label for="fContact">Phone or email</label>
+              <input type="text" id="fContact" name="contact" autocomplete="tel" required placeholder="So we can reach you">
+            </div>
+          </div>
+          <div class="field">
+            <label for="fService">Service (optional)</label>
+            <select id="fService" name="service">
+              <option value="">Not sure, describe it below</option>
+              <option value="A-101">A-101 &middot; Flat tire and puncture repair</option>
+              <option value="A-102">A-102 &middot; Brake adjustment</option>
+              <option value="A-103">A-103 &middot; Gear tune</option>
+              <option value="A-104">A-104 &middot; Full overhaul</option>
+              <option value="A-105">A-105 &middot; E-bike service</option>
+              <option value="A-106">A-106 &middot; Winter stud tire fitting</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fMsg">What is wrong with the bike?</label>
+            <textarea id="fMsg" name="message" required placeholder="Example: rear tire loses air overnight, and the front brake squeaks. Bike is a Helkama hybrid."></textarea>
+          </div>
+          <button type="submit" class="btn btn-solid form-submit">Send repair request</button>
+          <p class="form-note">NO ONLINE PAYMENT &middot; WE REPLY DURING OPENING HOURS</p>
+        </form>
+
+        <div class="form-confirm" id="formConfirm" role="status" aria-live="polite">
+          <span class="stamp" id="confirmStamp">Ticket received</span>
+          <h3>Request logged</h3>
+          <p id="confirmText">
+            Thanks. We have your repair request and will call or text you back
+            during opening hours with a time and a price.
+          </p>
+          <p class="mono-line" id="confirmMeta">ESPOO BIKE FIX &middot; VIERASKUJA 5, KILO</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<div class="hazard" aria-hidden="true"></div>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-brand">Espoo Bike <span>Fix</span></p>
+        <p>Bicycle repair, tune-ups and service<br>in the Kilo area of Espoo.</p>
+      </div>
+      <div class="footer-col mono">
+        VIERASKUJA 5<br>
+        02770 ESPOO, FINLAND<br>
+        <a href="https://www.google.com/maps/place/Espoo+Bike+Fix/@60.2078778,24.6627941" target="_blank" rel="noopener">GET DIRECTIONS</a>
+      </div>
+      <div class="footer-col mono">
+        <a href="tel:+358465272305">+358 46 5272305</a><br>
+        MON 09:00-20:30<br>
+        TUE-SUN 09:00-20:00
+      </div>
+    </div>
+    <div class="footer-demo">
+      <span>&copy; <span id="year">2026</span> ESPOO BIKE FIX &middot; KILO, ESPOO</span>
+      <span>DEMO WEBSITE</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CALL BAR ============ -->
+<div class="call-bar" id="callBar">
+  <div class="call-bar-inner">
+    <span class="call-bar-status" id="callBarStatus"><b>OPEN EVERY DAY</b><br>until 20:00</span>
+    <a class="call-bar-btn" href="tel:+358465272305">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/>
+      </svg>
+      Call the shop
+    </a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- opening hours ---------- */
+  var OPEN_MIN = 9 * 60;                 /* every day from 09:00 */
+  function closeMin(day){                /* day: 0 = Sunday */
+    return day === 1 ? 20 * 60 + 30 : 20 * 60;   /* Mon closes 20:30, else 20:00 */
+  }
+  function fmt(min){
+    var h = Math.floor(min / 60), m = min % 60;
+    return (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m);
+  }
+
+  var now = new Date();
+  var day = now.getDay();
+  var mins = now.getHours() * 60 + now.getMinutes();
+  var isOpen = mins >= OPEN_MIN && mins < closeMin(day);
+
+  var statusText = isOpen
+    ? "OPEN NOW, CLOSES " + fmt(closeMin(day))
+    : (mins < OPEN_MIN ? "CLOSED, OPENS 09:00" : "CLOSED, OPENS 09:00 TOMORROW");
+
+  var pill = document.getElementById("openPill");
+  var pillText = document.getElementById("openPillText");
+  pill.classList.add(isOpen ? "is-open" : "is-closed");
+  pillText.textContent = statusText;
+
+  var hoursStatus = document.getElementById("hoursStatus");
+  var hoursStatusText = document.getElementById("hoursStatusText");
+  hoursStatus.classList.add(isOpen ? "is-open" : "is-closed");
+  hoursStatusText.textContent = statusText;
+
+  var heroToday = document.getElementById("heroToday");
+  heroToday.textContent = isOpen ? "Open now, until " + fmt(closeMin(day)) : "Closed, opens 09:00";
+
+  var callBarStatus = document.getElementById("callBarStatus");
+  callBarStatus.innerHTML = isOpen
+    ? "<b>OPEN NOW</b><br>until " + fmt(closeMin(day))
+    : "<b>OPEN EVERY DAY</b><br>from 09:00";
+
+  /* highlight today's row in the hours table */
+  var rows = document.querySelectorAll("#hoursList li");
+  for (var i = 0; i < rows.length; i++){
+    if (parseInt(rows[i].getAttribute("data-day"), 10) === day){
+      rows[i].classList.add("today");
+    }
+  }
+
+  /* ---------- workshop ticket number (rotates per visit) ---------- */
+  var ticketNo = document.getElementById("ticketNo");
+  ticketNo.textContent = "No. A-" + (200 + Math.floor(Math.random() * 90));
+
+  /* ---------- scroll reveal ---------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---------- booking form ---------- */
+  var form = document.getElementById("bookForm");
+  var confirmBox = document.getElementById("formConfirm");
+  var confirmText = document.getElementById("confirmText");
+  var confirmStamp = document.getElementById("confirmStamp");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = form.name.value.trim();
+    var contact = form.contact.value.trim();
+    var message = form.message.value.trim();
+
+    if (!name || !contact || !message){
+      [form.name, form.contact, form.message].forEach(function(input){
+        if (!input.value.trim()){
+          input.style.borderColor = "#dc2626";
+          input.addEventListener("input", function(){
+            input.style.borderColor = "";
+          }, { once: true });
+        }
+      });
+      return;
+    }
+
+    var ticket = "B-" + (300 + Math.floor(Math.random() * 600));
+    var service = form.service.value;
+    confirmStamp.textContent = "Ticket " + ticket;
+    confirmText.textContent =
+      "Thanks, " + name.split(" ")[0] + ". Your repair request" +
+      (service ? " for ticket " + service : "") +
+      " is logged. We will call or text you at " + contact +
+      " during opening hours with a time and a fixed price.";
+
+    form.style.display = "none";
+    confirmBox.classList.add("show");
+    confirmBox.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  /* ---------- footer year ---------- */
+  document.getElementById("year").textContent = String(new Date().getFullYear());
+})();
+</script>
+</body>
+</html>
